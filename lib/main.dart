@@ -1,7 +1,46 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(CobaApp());
+} 
+
+class CobaApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Coba",
+      home: Scaffold(
+        appBar: AppBar(title: Text("Coba")),
+        body: Row(
+          children: [
+            Expanded(
+              flex: 4,
+              child: Container(
+                color: Colors.yellow,
+                child: Text("Ini nanti diisi gambar"),
+              ),
+            ),
+            Expanded(
+              flex: 6, 
+              child: Column(
+                children: [
+                  Expanded(child: 
+                    Row(children: [
+                    Expanded(flex: 5, child: Container(color: Colors.green)),
+                    Expanded(flex: 5, child: Container(color: Colors.red))
+                  ])),
+                  Expanded(child: Container(color: Colors.blue,)),
+              ],)
+            )
+          ],
+          )
+      )
+    );
+  }
+
+}
 
 class MyApp extends StatelessWidget {
   @override
