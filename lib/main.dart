@@ -1,9 +1,94 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(CobaApp());
-} 
+  runApp(MaterialApp(home: HomePageWidget()));
+}
+
+class HomePageWidget extends StatefulWidget {
+  HomePageWidget({Key key = const Key("any_key")}) : super(key: key);
+
+  @override
+  _HomePageWidgetState createState() => _HomePageWidgetState();
+}
+
+class _HomePageWidgetState extends State<HomePageWidget> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: Colors.blue ,
+        automaticallyImplyLeading: true,
+        actions: [],
+        centerTitle: true,
+        elevation: 4,
+      ),
+      backgroundColor: Color(0xFFF5F5F5),
+      body: SafeArea(
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Container(
+              width: 100,
+              height: 100,
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width,
+                maxHeight: 100,
+              ),
+              decoration: BoxDecoration(
+                color: Color(0xFFEEEEEE),
+              ),
+              child: Image.network(
+                'https://picsum.photos/seed/62/600',
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.7,
+              height: 100,
+              decoration: BoxDecoration(
+                color: Color(0xFFEEEEEE),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEEEEEE),
+                    ),
+                    child: Text(
+                      'Hello World'
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEEEEEE),
+                    ),
+                    child: Text(
+                      'fsgfgfdhgfhgfhjghjgjgjjkhjkbjkbjvhvgcghcghghchgvhjvhjvhjvhjvjhvjvjhv',
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 
 class CobaApp extends StatelessWidget {
 
